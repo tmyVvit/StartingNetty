@@ -1,4 +1,4 @@
-package chapter3.server;
+package chapter4.server;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.buffer.ByteBuf;
