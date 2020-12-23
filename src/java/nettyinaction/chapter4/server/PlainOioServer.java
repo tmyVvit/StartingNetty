@@ -1,4 +1,4 @@
-package chapter4.server;
+package nettyinaction.chapter4.server;
 
 import java.io.IOException;
 import java.io.OutputStream;
