@@ -1,4 +1,4 @@
-package test.nettyinaction.chapter9.embeddedchannel; 
+package nettyinaction.chapter9.embeddedchannel;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
