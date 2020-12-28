@@ -29,7 +29,6 @@ public class SecuredChatServer extends ChatServer {
         int port = Integer.parseInt(args[0]);
         SelfSignedCertificate cert = new SelfSignedCertificate();
         SslContext context = SslContext.newServerContext(cert.certificate(), cert.privateKey());
-        SslContext context1 = SslContext.defaultClientProvider()
 
         final SecuredChatServer endpoint = new SecuredChatServer(context);
         ChannelFuture future = endpoint.start(new InetSocketAddress(port));
