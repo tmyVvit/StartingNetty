@@ -4,6 +4,8 @@ import io.netty.channel.Channel;
 import io.netty.channel.ChannelInitializer;
 import io.netty.handler.codec.protobuf.ProtobufVarint32LengthFieldPrepender;
 
+import java.util.Arrays;
+
 // Protocol Buffers是由Google公司开发的、开源的数据交换格式  https://github.com/google/protobuf
 //  ProtobufDecoder  使用protobuf进行解码
 //  ProtobufEncoder  使用protobuf进行编码
@@ -13,6 +15,5 @@ public class ProtoBufInitializer extends ChannelInitializer<Channel> {
 
     @Override
     protected void initChannel(Channel channel) throws Exception {
-
     }
 }
