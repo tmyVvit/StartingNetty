@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
 // 当所有非后台线程结束时，程序也就终止了，这时会杀死所有后台线程，后台线程会突然终止（即时运行在try-catch-finally时，也不会执行finally中的代码，而是直接终止）
 // 后台线程创建的线程也是后台线程
 public class DaemonThreadDemo {
-    static class DaemonThreadFactory implements ThreadFactory {
+    public static class DaemonThreadFactory implements ThreadFactory {
         @Override
         public Thread newThread(@NotNull Runnable r) {
             Thread thread = new Thread(r);
