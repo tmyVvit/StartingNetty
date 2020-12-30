@@ -1,0 +1,42 @@
+package thinkinginjava.chapter18.io.std;
+
+import thinkinginjava.chapter18.io.inputoutput.Constants;
+
+import java.io.*;
+
+// 标准I/O重定向
+public class Redirecting {
+    private final static String PATH = "./src/java/thinkinginjava/chapter18/io/std/";
+    private final static String FILE_NAME = PATH + "Redirecting.java";
+    private final static String OUT_NAME = PATH + "Redirecting.out";
+    public static void main(String[] args) throws IOException {
+        PrintStream console = null;
+        BufferedInputStream in = null;
+        PrintStream out = null;
+        try {
+            console = System.out;
+            in = new BufferedInputStream(new FileInputStream(FILE_NAME));
+            out = new PrintStream(new BufferedOutputStream(new FileOutputStream(OUT_NAME)));
+            System.setIn(in);
+            System.setOut(out);
+            System.setErr(out);
+            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+            String s;
+            while ((s = br.readLine()) != null) {
+                System.out.println(s);
+            }
+            out.close();
+            System.setOut(console);
+        } finally {
+            if (in != null)
+                try {
+                    in.close();
+                }catch (IOException ignore){}
+            if (out != null)
+                try {
+                    out.close();
+                } catch (Exception ignore) {}
+        }
+
+    }
+}

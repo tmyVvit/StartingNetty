@@ -1,0 +1,20 @@
+1: package thinkinginjava.chapter18.io.inputoutput;
+2: 
+3: import java.io.*;
+4: 
+5: // 基本的文件输出
+6: public class BasicFileOutput {
+7:     static final String FILE_NAME = "BasicFileOutput.out";
+8:     public static void main(String[] args) throws IOException {
+9:         try (BufferedReader in = new BufferedReader(new StringReader(BufferedInputFile.read(Constants.DIR + "BasicFileOutput.java")));
+10:              PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(Constants.DIR + FILE_NAME)))){
+11:             int lineCount = 1;
+12:             String s;
+13:             while ((s = in.readLine()) != null) {
+14:                 out.println(lineCount++ + ": " + s);
+15:             }
+16:             out.close();
+17:             System.out.println(BufferedInputFile.read(Constants.DIR + FILE_NAME));
+18:         }
+19:     }
+20: }
