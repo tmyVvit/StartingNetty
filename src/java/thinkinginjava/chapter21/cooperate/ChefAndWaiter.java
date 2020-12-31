@@ -1,14 +1,20 @@
 package thinkinginjava.chapter21.cooperate;
 
-import com.sun.scenario.effect.impl.state.AccessHelper;
-
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.locks.Condition;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 //一个生产者与消费者的例子
 // 厨师和服务员，服务员必须等待厨师准备好膳食，
 // 当厨师准备好时，就会通知服务员，然后服务员上菜，继续等待
+
+// 出了使用wait()/notify()，也可以使用显式的锁Lock以及允许线程挂起的基本类Condition来实现 await()/signalAll()
+//        Lock lock = new ReentrantLock();
+//        Condition condition = lock.newCondition();
+//        condition.await(); condition.signal(); condition.signalAll();
 public class ChefAndWaiter {
     public static void main(String[] args) {
         Restaurant restaurant = new Restaurant();
