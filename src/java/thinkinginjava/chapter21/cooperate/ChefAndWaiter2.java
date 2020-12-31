@@ -28,6 +28,8 @@ public class ChefAndWaiter2 {
 
 // MealHolder 专门用来放置做好的食物
 // 厨师做好食物后直接放进这里，服务员也直接从这里拿食物
+
+// 其实我们也可以在MealHolder中实现同步与唤醒等操作，但是在这个代码中并没有采用这种方式
 class MealHolder {
     private final List<NewMeal> meals;
     private final int maxMeal;
