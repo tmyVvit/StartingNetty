@@ -1,6 +1,5 @@
 package thinkinginjava.chapter18.nio;
 
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
