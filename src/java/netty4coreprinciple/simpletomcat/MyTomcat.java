@@ -26,7 +26,7 @@ public class MyTomcat {
         // 加载web.xml文件，同时初始化servletmapping
         try {
             String WEB_INF = this.getClass().getResource("/").getPath();
-            FileInputStream fis = new FileInputStream(WEB_INF + "web.properties");
+            FileInputStream fis = new FileInputStream(WEB_INF + "netty4coreprinciple/simpletomcat/web.properties");
 
             webxml.load(fis);
 
